@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FAQ | NexFin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root
+{
+    --primary:#00ff88;
+    --dark:#0a0a0c;
+    --card:#111115;
+    --text:#94a3b8;
+    --border:rgba(255,255,255,0.08);
+}
+
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body
+{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--dark);
+    color:white;
+}
+
+/* NAV */
+
+nav
+{
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--border);
+    background:#0d0d10;
+}
+
+.logo
+{
+    color:var(--primary);
+    font-size:1.5rem;
+    font-weight:800;
+}
+
+nav a
+{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover
+{
+    color:var(--primary);
+}
+
+/* HERO */
+
+.hero
+{
+    padding:110px 8% 40px;
+    text-align:center;
+}
+
+.hero h1
+{
+    font-size:3rem;
+}
+
+.hero span
+{
+    color:var(--primary);
+}
+
+.hero p
+{
+    color:var(--text);
+    max-width:700px;
+    margin:20px auto;
+    line-height:1.8;
+}
+
+/* FAQ */
+
+.container
+{
+    padding:0 8% 100px;
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item
+{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    margin-top:20px;
+    transition:0.3s;
+}
+
+.faq-item:hover
+{
+    transform:translateY(-5px);
+    border-color:var(--primary);
+}
+
+.faq-item h3
+{
+    margin-bottom:10px;
+    color:var(--primary);
+}
+
+.faq-item p
+{
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer
+{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid var(--border);
+    color:#555;
+    font-size:0.85rem;
+    margin-top:60px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        NexFin.
+    </div>
+
+    <a href="index.html">
+        Volver
+    </a>
+
+</nav>
+
+<section class="hero">
+
+    <h1>
+        Preguntas <span>Frecuentes</span>
+    </h1>
+
+    <p>
+        Aquí resolvemos las dudas más comunes de los usuarios
+        sobre cómo funciona NexFin.
+    </p>
+
+</section>
+
+<section class="container">
+
+    <div class="faq-item">
+
+        <h3>
+            ¿Neta sí me prestan rápido?
+        </h3>
+
+        <p>
+            Sí, si todo está en orden la aprobación puede ser en minutos.
+        </p>
+
+    </div>
+
+    <div class="faq-item">
+
+        <h3>
+            ¿Qué necesito para registrarme?
+        </h3>
+
+        <p>
+            Solo tus datos básicos y una identificación oficial.
+        </p>
+
+    </div>
+
+    <div class="faq-item">
+
+        <h3>
+            ¿Es seguro?
+        </h3>
+
+        <p>
+            Sí, usamos cifrado y sistemas de protección de datos.
+        </p>
+
+    </div>
+
+    <div class="faq-item">
+
+        <h3>
+            ¿Y si no pago a tiempo?
+        </h3>
+
+        <p>
+            Se generan cargos adicionales, pero puedes ponerte al corriente después.
+        </p>
+
+    </div>
+
+    <div class="faq-item">
+
+        <h3>
+            ¿Me pueden negar el crédito?
+        </h3>
+
+        <p>
+            Sí, depende de la evaluación del sistema.
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+    NexFin S.A.P.I. de C.V. • México 2026
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Privacidad | NexFin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root
+{
+    --primary:#00ff88;
+    --dark:#0a0a0c;
+    --card:#111115;
+    --text:#94a3b8;
+    --border:rgba(255,255,255,0.08);
+}
+
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body
+{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--dark);
+    color:white;
+}
+
+nav
+{
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--border);
+    background:#0d0d10;
+}
+
+.logo
+{
+    color:var(--primary);
+    font-size:1.5rem;
+    font-weight:800;
+}
+
+nav a
+{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover
+{
+    color:var(--primary);
+}
+
+.hero
+{
+    padding:100px 8% 50px;
+    text-align:center;
+}
+
+.hero h1
+{
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.hero span
+{
+    color:var(--primary);
+}
+
+.hero p
+{
+    max-width:700px;
+    margin:auto;
+    color:var(--text);
+    line-height:1.8;
+}
+
+.container
+{
+    max-width:1000px;
+    margin:auto;
+    padding:0 8% 100px;
+}
+
+.card
+{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:35px;
+    margin-top:30px;
+    transition:0.3s;
+}
+
+.card:hover
+{
+    transform:translateY(-5px);
+    border-color:var(--primary);
+    box-shadow:0 0 25px rgba(0,255,136,0.08);
+}
+
+.card h2
+{
+    margin-bottom:15px;
+    color:var(--primary);
+}
+
+.card p
+{
+    color:var(--text);
+    line-height:1.8;
+}
+
+footer
+{
+    padding:40px;
+    text-align:center;
+    border-top:1px solid var(--border);
+    color:#555;
+    font-size:0.85rem;
+}
+
+@media(max-width:768px)
+{
+    .hero h1
+    {
+        font-size:2.5rem;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        NexFin.
+    </div>
+
+    <a href="index.html">
+        Volver
+    </a>
+
+</nav>
+
+<section class="hero">
+
+    <h1>
+        Aviso de <span>Privacidad</span>
+    </h1>
+
+    <p>
+        En NexFin nos comprometemos a proteger
+        la información y privacidad de todos nuestros usuarios.
+    </p>
+
+</section>
+
+<section class="container">
+
+    <div class="card">
+
+        <h2>
+            Información recopilada
+        </h2>
+
+        <p>
+            Podemos recopilar datos básicos como nombre,
+            correo electrónico, número telefónico e información
+            necesaria para validar la identidad del usuario.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>
+            Protección de datos
+        </h2>
+
+        <p>
+            Utilizamos sistemas de cifrado y monitoreo constante
+            para proteger toda la información almacenada.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>
+            Uso de información
+        </h2>
+
+        <p>
+            La información recopilada es utilizada únicamente
+            para mejorar nuestros servicios y validar procesos internos.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>
+            Seguridad
+        </h2>
+
+        <p>
+            Contamos con protocolos de seguridad digitales
+            enfocados en proteger los datos de acceso y navegación.
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+    NexFin S.A.P.I. de C.V. • México 2026
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contacto | NexFin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root
+{
+    --primary:#00ff88;
+    --dark:#0a0a0c;
+    --card:#111115;
+    --text:#94a3b8;
+    --border:rgba(255,255,255,0.08);
+}
+
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body
+{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--dark);
+    color:white;
+}
+
+/* NAV */
+
+nav
+{
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--border);
+    background:#0d0d10;
+}
+
+.logo
+{
+    color:var(--primary);
+    font-size:1.5rem;
+    font-weight:800;
+}
+
+nav a
+{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover
+{
+    color:var(--primary);
+}
+
+/* HERO */
+
+.hero
+{
+    padding:110px 8% 40px;
+    text-align:center;
+}
+
+.hero h1
+{
+    font-size:3.2rem;
+}
+
+.hero span
+{
+    color:var(--primary);
+}
+
+.hero p
+{
+    color:var(--text);
+    max-width:700px;
+    margin:20px auto;
+    line-height:1.8;
+}
+
+/* CONTACTO */
+
+.container
+{
+    padding:0 8% 100px;
+    max-width:900px;
+    margin:auto;
+}
+
+.card
+{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+    margin-top:25px;
+    transition:0.3s;
+}
+
+.card:hover
+{
+    border-color:var(--primary);
+    transform:translateY(-5px);
+}
+
+.info
+{
+    color:var(--text);
+    margin-top:10px;
+    line-height:1.8;
+}
+
+/* FORM */
+
+input, textarea
+{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border-radius:10px;
+    border:1px solid #222;
+    background:#0f0f12;
+    color:white;
+    outline:none;
+}
+
+button
+{
+    margin-top:15px;
+    padding:12px 25px;
+    background:var(--primary);
+    border:none;
+    color:black;
+    font-weight:800;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer
+{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid var(--border);
+    color:#555;
+    font-size:0.85rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">NexFin.</div>
+
+    <a href="index.html">Volver</a>
+
+</nav>
+
+<section class="hero">
+
+    <h1>Contacto <span>NexFin</span></h1>
+
+    <p>
+        Si necesitas ayuda, puedes comunicarte con nosotros por correo o enviar un mensaje directo.
+    </p>
+
+</section>
+
+<section class="container">
+
+    <div class="card">
+
+        <h3>Correo electrónico</h3>
+
+        <div class="info">
+            soporte@nexfin.com<br>
+            ayuda.nexfin@gmail.com
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Teléfono</h3>
+
+        <div class="info">
+            +52 81 0000 0000
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Envíanos un mensaje</h3>
+
+        <input type="text" placeholder="Tu nombre">
+        <input type="email" placeholder="Tu correo">
+        <textarea rows="4" placeholder="Escribe tu mensaje"></textarea>
+
+        <button>Enviar</button>
+
+    </div>
+
+</section>
+
+<footer>
+    NexFin S.A.P.I. de C.V. • México 2026
+</footer>
+
+</body>
+</html>

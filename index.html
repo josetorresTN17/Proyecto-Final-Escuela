@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NexFin | Soluciones Financieras</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+:root
+{
+    --primary:#00ff88;
+    --dark:#0a0a0c;
+    --card:rgba(255,255,255,0.04);
+    --text:#94a3b8;
+    --border:rgba(255,255,255,0.08);
+}
+
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body
+{
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+body
+{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--dark);
+    color:white;
+}
+
+/* Fondo Glow */
+
+body::before
+{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(0,255,136,0.08);
+    filter:blur(120px);
+    border-radius:50%;
+    top:-150px;
+    right:-150px;
+    z-index:-1;
+}
+
+/* Barra superior */
+
+.topbar
+{
+    background:var(--primary);
+    color:black;
+    text-align:center;
+    padding:10px;
+    font-size:0.8rem;
+    font-weight:700;
+}
+
+/* NAVBAR */
+
+nav
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(10px);
+    background:rgba(10,10,12,0.85);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+}
+
+.logo
+{
+    font-size:1.6rem;
+    font-weight:800;
+    color:var(--primary);
+    text-decoration:none;
+}
+
+nav ul
+{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav ul li a
+{
+    color:white;
+    text-decoration:none;
+    font-size:0.95rem;
+    transition:0.3s;
+}
+
+nav ul li a:hover
+{
+    color:var(--primary);
+}
+
+/* HERO */
+
+.hero
+{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:180px 20px 100px;
+    background:radial-gradient(circle at center,#181828 0%,#0a0a0c 100%);
+}
+
+.hero-content
+{
+    max-width:850px;
+}
+
+.badge
+{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid #333;
+    border-radius:50px;
+    color:var(--primary);
+    margin-bottom:30px;
+    font-size:0.9rem;
+}
+
+.hero h1
+{
+    font-size:clamp(3rem,8vw,5.5rem);
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero h1 span
+{
+    color:var(--primary);
+    text-shadow:0 0 30px rgba(0,255,136,0.5);
+}
+
+.hero p
+{
+    color:var(--text);
+    font-size:1.1rem;
+    line-height:1.8;
+    max-width:650px;
+    margin:auto;
+}
+
+.hero-buttons
+{
+    margin-top:45px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-main
+{
+    background:var(--primary);
+    color:black;
+    padding:20px 45px;
+    border-radius:18px;
+    text-decoration:none;
+    font-weight:800;
+    transition:0.3s;
+}
+
+.btn-main:hover
+{
+    transform:scale(1.05);
+    box-shadow:0 0 40px rgba(0,255,136,0.3);
+}
+
+.btn-secondary
+{
+    border:1px solid #333;
+    color:white;
+    padding:20px 45px;
+    border-radius:18px;
+    text-decoration:none;
+}
+
+/* SECCIONES */
+
+section
+{
+    padding:100px 8%;
+}
+
+.section-title
+{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.section-sub
+{
+    text-align:center;
+    color:var(--text);
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* GRID */
+
+.grid
+{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+/* CARDS */
+
+.card
+{
+    background:var(--card);
+    padding:40px;
+    border-radius:24px;
+    border:1px solid var(--border);
+    backdrop-filter:blur(15px);
+    transition:0.3s;
+}
+
+.card:hover
+{
+    transform:translateY(-8px);
+    border-color:var(--primary);
+    box-shadow:0 0 30px rgba(0,255,136,0.1);
+}
+
+.card i
+{
+    font-size:2rem;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.card h3
+{
+    margin-bottom:15px;
+}
+
+.card p
+{
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* STATS */
+
+.stats
+{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    flex-wrap:wrap;
+    text-align:center;
+    background:#0c0c10;
+}
+
+.stat h2
+{
+    font-size:3rem;
+    color:var(--primary);
+}
+
+.stat p
+{
+    margin-top:10px;
+    color:var(--text);
+}
+
+/* PASOS */
+
+.step
+{
+    text-align:center;
+}
+
+.step-number
+{
+    width:60px;
+    height:60px;
+    background:var(--primary);
+    color:black;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto auto 25px;
+    font-weight:800;
+    font-size:1.2rem;
+}
+
+/* DASHBOARD */
+
+.dashboard
+{
+    margin-top:60px;
+    background:linear-gradient(145deg,#121216,#1a1a22);
+    padding:50px;
+    border-radius:30px;
+    border:1px solid var(--border);
+}
+
+.balance
+{
+    background:rgba(255,255,255,0.04);
+    padding:40px;
+    border-radius:25px;
+}
+
+.balance h1
+{
+    margin-top:10px;
+    font-size:3rem;
+    color:var(--primary);
+}
+
+/* RESEÑAS */
+
+.review-card
+{
+    background:#111115;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #1c1c22;
+}
+
+.review-card p
+{
+    line-height:1.8;
+    color:#d1d5db;
+}
+
+.user
+{
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid #222;
+}
+
+/* FAQ */
+
+.faq
+{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item
+{
+    background:var(--card);
+    padding:30px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    margin-top:20px;
+}
+
+.faq-item h3
+{
+    margin-bottom:15px;
+}
+
+.faq-item p
+{
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* CTA */
+
+.cta
+{
+    text-align:center;
+    background:linear-gradient(180deg,#0a0a0c 0%,#111 100%);
+}
+
+.cta h2
+{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta p
+{
+    color:var(--text);
+    max-width:700px;
+    margin:auto auto 40px;
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer
+{
+    padding:70px 8%;
+    border-top:1px solid #1c1c22;
+}
+
+.footer-grid
+{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
+
+.footer-grid h4
+{
+    margin-bottom:20px;
+}
+
+.footer-grid a
+{
+    display:block;
+    color:var(--text);
+    text-decoration:none;
+    margin-bottom:12px;
+}
+
+.footer-grid a:hover
+{
+    color:var(--primary);
+}
+
+.copy
+{
+    margin-top:50px;
+    text-align:center;
+    color:#555;
+    font-size:0.8rem;
+}
+
+/* BOTON CHAT */
+
+.chat-btn
+{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    background:var(--primary);
+    color:black;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.4rem;
+    box-shadow:0 0 30px rgba(0,255,136,0.4);
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px)
+{
+    nav
+    {
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul
+    {
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero
+    {
+        padding-top:220px;
+    }
+
+    .hero-buttons
+    {
+        flex-direction:column;
+    }
+    
+
+    .btn-main,
+    .btn-secondary
+    {
+        width:100%;
+    }
+
+    .stats
+    {
+        gap:40px;
+    }
+
+    .section-title
+    {
+        font-size:2rem;
+    }
+
+    .cta h2
+    {
+        font-size:2.2rem;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+    APROBACIÓN EN MENOS DE 5 MINUTOS • SOPORTE 24/7
+</div>
+
+<nav>
+    
+     <a href="index.html" class="logo">
+        NexFin.
+    </a>
+
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+</nav>
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            FINTECH DIGITAL • MÉXICO 2026
+        </div>
+
+        <h1>
+            Tu dinero, <span>sin complicaciones.</span>
+        </h1>
+
+        <p>
+            Solicita tu línea de crédito desde cualquier lugar.
+            Rápido, seguro y completamente digital.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="registro.html" class="btn-main">
+    SOLICITAR CRÉDITO
+</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section class="stats">
+
+    <div class="stat">
+        <h2>+250K</h2>
+        <p>Usuarios activos</p>
+    </div>
+
+    <div class="stat">
+        <h2>$120M</h2>
+        <p>Créditos otorgados</p>
+    </div>
+
+    <div class="stat">
+        <h2>4.9★</h2>
+        <p>Calificación promedio</p>
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">
+        ¿Por qué elegir NexFin?
+    </h2>
+
+    <p class="section-sub">
+        Tecnología financiera moderna diseñada para ofrecerte
+        una experiencia rápida y segura.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Aprobación inmediata</h3>
+
+            <p>
+                Procesamos solicitudes automáticamente utilizando IA.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <h3>Protección avanzada</h3>
+
+            <p>
+                Toda tu información está cifrada y protegida.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>100% digital</h3>
+
+            <p>
+                Realiza todo el proceso desde tu celular.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">
+        ¿Cómo funciona?
+    </h2>
+
+    <div class="grid">
+
+        <div class="card step">
+
+            <div class="step-number">1</div>
+
+            <h3>Registro</h3>
+
+            <p>
+                Completa tus datos básicos y valida tu identidad.
+            </p>
+
+        </div>
+
+        <div class="card step">
+
+            <div class="step-number">2</div>
+
+            <h3>Evaluación</h3>
+
+            <p>
+                Nuestro sistema analiza tu perfil automáticamente.
+            </p>
+
+        </div>
+
+        <div class="card step">
+
+            <div class="step-number">3</div>
+
+            <h3>Depósito</h3>
+
+            <p>
+                Recibe el dinero directamente en tu cuenta.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">
+        Opiniones de usuarios
+    </h2>
+
+    <div class="grid">
+
+        <div class="review-card">
+
+            <p>
+                “Pues fue rapido y muy sensillo”
+            </p>
+
+            <div class="user">
+
+                <b>Carlos M.</b>
+
+                <p style="color:#555">
+                    Usuario verificado
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="review-card">
+
+            <p>
+                “Estuvo bien, sin tantos requisitos la vdd”
+            </p>
+
+            <div class="user">
+
+                <b>Alejandra T.</b>
+
+                <p style="color:#555">
+                    Usuario verificado
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="review-card">
+
+            <p>
+                “esta biem me dieron el credito 5k”
+            </p>
+
+            <div class="user">
+
+                <b>Fernando R.</b>
+
+                <p style="color:#555">
+                    Usuario verificado
+                </p>
+
+            </div>
+
+        </div>
+        
+        <div class="review-card">
+
+            <p>
+                “buena lana, me sirvio mucho aunque me hubiera gustado
+                que fuera de 10k pero igual 5k sirven”
+            </p>
+
+            <div class="user">
+
+                <b>Josue T.</b>
+
+                <p style="color:#555">
+                    Usuario verificado
+                </p>
+
+            </div>
+
+        </div>
+        
+        <div class="review-card">
+
+            <p>
+                “muy bien muy bien, un pocoo tardado y me
+                asuste, pero me llego el mensaje por wasap y si me acreditaron”
+            </p>
+
+            <div class="user">
+
+                <b>Isabella H.</b>
+
+                <p style="color:#555">
+                    Usuario verificado
+                </p>
+
+            </div>
+
+        </div>
+        
+         <div class="review-card">
+
+            <p>
+                "Me gustaria que fueran mas rapidos, de ahi todo bien"
+            </p>
+
+            <div class="user">
+
+                <b>Elias C.</b>
+
+                <p style="color:#555">
+                    Usuario verificado
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">
+        Preguntas frecuentes
+    </h2>
+
+    <div class="faq">
+
+        <div class="faq-item">
+
+            <h3>
+                ¿Necesito historial crediticio?
+            </h3>
+
+            <p>
+                No necesariamente. Evaluamos múltiples factores.
+            </p>
+
+        </div>
+
+        <div class="faq-item">
+
+            <h3>
+                ¿Cuánto tarda la aprobación?
+            </h3>
+
+            <p>
+                Normalmente menos de 2 dias.
+            </p>
+
+        </div>
+
+        <div class="faq-item">
+
+            <h3>
+                ¿Es seguro?
+            </h3>
+
+            <p>
+                Sí. Toda la información está protegida.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <h2>
+        Empieza hoy mismo
+    </h2>
+
+    <p>
+        Únete a miles de usuarios que ya utilizan NexFin.
+    </p>
+
+<a href="registro.html" class="btn-main">
+    SOLICITAR CRÉDITO
+</a>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h4>NexFin</h4>
+
+            <a href="#">Inicio</a>
+            <a href="nosotros.html">
+                Nosotros
+            </a>
+
+        </div>
+
+        <div>
+
+            <h4>Legal</h4>
+
+            <a href="privacidad.html">Aviso de Privacidad</a>
+            <a href="terminos.html">Términos y Condiciones</a>
+
+        </div>
+
+        <div>
+
+            <h4>Soporte</h4>
+
+            <a href="ayuda.html">Ayuda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="faq.html">FAQ</a>
+
+        </div>
+
+    </div>
+
+    <div class="copy">
+        NexFin S.A.P.I. de C.V. • México 2026
+    </div>
+
+</footer>
+
+
+<script>
+
+window.addEventListener("scroll",function()
+{
+    let nav=document.querySelector("nav");
+
+    if(window.scrollY > 50)
+    {
+        nav.style.background="rgba(10,10,12,0.97)";
+        nav.style.padding="15px 8%";
+    }
+    else
+    {
+        nav.style.background="rgba(10,10,12,0.85)";
+        nav.style.padding="20px 8%";
+    }
+});
+
+</script>
+
+</body>
+</html>
